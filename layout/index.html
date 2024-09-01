@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Choose Difficulty:</p>
+    <select id="difficultySelect" onchange="setDifficulty()">
+        <option value="easy">Easy (1-50, 10 attempts)</option>
+        <option value="medium" selected>Medium (1-100, 7 attempts)</option>
+        <option value="hard">Hard (1-200, 5 attempts)</option>
+    </select>
+    
+    <p>Enter Your Name:</p>
+    <input type="text" id="playerName" placeholder="Your Name" required>
+    
+    <p>Guess a number:</p>
+    <input type="number" id="guessInput" min="1" max="200" placeholder="Enter your guess" required>
+    <button onclick="checkGuess()">Guess</button>
+    <button onclick="resetGame()">Start New Game</button>
+    <button onclick="resetLeaderboard()">Reset Leaderboard</button>
+    
+    <div id="message"></div>
+    
+    <h3>Your Previous Guesses:</h3>
+    <ul id="guessList"></ul>
+    
+    <div id="attemptsRemaining"></div>
+    <div id="lastGuess"></div>
+    <div id="numberToGuess" style="display: none;"></div> <!-- Hidden element to store the number -->
+    
+    <div id="timer"></div>
+    <h3>Leaderboard:</h3>
+    <ol id="leaderboard"></ol>
+
+    <footer>
+        <p>&copy; 2024 Number Guessing Game. All rights reserved.</p>
+        <p>Created by Mohsen Nozari</p>
+    </footer>
+
+    <audio id="correctSound" src="sounds/correct.mp3"></audio>
+    <audio id="incorrectSound" src="sounds/incorrect.mp3"></audio>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
